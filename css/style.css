@@ -1,0 +1,57 @@
+body{
+    position: relative;
+    width: 80%;
+    margin: 0px auto;
+    background-color: cadetblue;
+}
+header h2{
+    text-align: center;
+    font-size: xx-large;
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    background-clip: unset;
+    background: linear-gradient(to left, rgb(146, 144, 24), rgb(30, 2, 63));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+     width: 400px;
+}
+nav li{
+    display: inline;
+    margin-right: 15%;
+    text-decoration: none;
+}
+nav li a {
+    text-decoration: none;
+    font-size: x-large;
+    font-weight: 800;
+    background: linear-gradient(to left,rgb(145, 19, 103),rgb(221, 73, 36));
+    background-clip: initial;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+nav{
+margin-bottom: 25px;
+}
+#all-products img{
+    float: left;
+    width: 31%;
+    /* height: calc(width); */
+    height: 471px;
+    margin: 5px 1%;
+}
+#all-products{
+    background-color: blueviolet;
+    width: 100%;
+    overflow: auto;
+}
+
+ul#results{
+    background-color: rgb(2, 105, 36);
+
+    max-width: 40%;
+}
+#results li{
+    font-size: x-large;
+    color: yellowgreen;
+}
