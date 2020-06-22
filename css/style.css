@@ -55,3 +55,14 @@ ul#results{
     font-size: x-large;
     color: yellowgreen;
 }
+#myChart{
+    max-width: 60% !important;
+    max-height: 300px !important;
+    padding: 15px;
+    margin: 10px;
+    /*max-height: calc(max-width*1) !important;*/
+}
+
+p{
+    background-color: rgba(230, 233, 61, 0.37);
+}
