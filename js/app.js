@@ -1,6 +1,9 @@
 var productSection = document.getElementById('all-products');
 var allProducts = [];
 var totalClicks = 0;
+var productsName=[];
+var productsVotes=[];      // number of clicks for each img after finishing the maxAllowedClicks
+var productsTimeShown=[];  //number of displays(timesShown) for each img after finishing the maxAllowedClicks
 var maxAllowedClicks = 25;
 
 var leftImage = document.getElementById('left-image');
@@ -21,6 +24,7 @@ function ProductPicture(name, url) {
     this.numberOfClicks = 0;
     this.timesShown = 0;
     allProducts.push(this);
+    productsName.push(this.name);
 }
 
 new ProductPicture('bag', 'img/bag.jpg');
@@ -133,5 +137,45 @@ function handleGoatClick(event) {
 
         productSection.removeEventListener('click', handleGoatClick);
         alert(`you have clicked ${maxAllowedClicks} times`);
+        drawChart();
     }
+}
+
+
+
+// productsVotes & draw chart // runs after finishing the maxAllowedClicks
+function drawChart(){
+
+    for(var i = 0; i<allProducts.length;i++){
+        productsVotes.push(allProducts[i].numberOfClicks);
+        productsTimeShown.push(allProducts[i].timesShown);
+    }
+
+var ctx = document.getElementById('myChart').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: productsName,
+        datasets: [{
+            label: '# of Votes',
+            data: productsVotes,
+            backgroundColor: 'rgba(15, 75, 15, 0.37)' ,
+            borderColor: 'rgba(230, 233, 61, 1)',
+            borderWidth: 2
+        },{label: '# of Displays',
+        data: productsTimeShown,
+        backgroundColor: 'rgba(28, 71, 190, 0.37)' ,
+        borderColor: 'rgba(98, 42, 112, 1)',
+        borderWidth: 2}]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
 }
