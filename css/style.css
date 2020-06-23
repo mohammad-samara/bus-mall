@@ -66,3 +66,7 @@ ul#results{
 p{
     background-color: rgba(230, 233, 61, 0.37);
 }
+
+#clearStorage{
+    margin: 25px;
+}
