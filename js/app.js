@@ -6,6 +6,8 @@ clearStorage.onclick = function () {
     location.reload(); // refresh the page 
     console.log('Our local storage data has been removed');
 }
+
+
 // if (totalClicks==maxAllowedClicks){
 // var confirm1 = confirm("you have already voted, do you want to delete data and start a new vote?");
 // if (confirm1) { localStorage.clear();}
@@ -18,6 +20,14 @@ var productsVotes = [];      // number of clicks for each img after finishing th
 var productsTimeShown = [];  //number of displays(timesShown) for each img after finishing the maxAllowedClicks
 var maxAllowedClicks = 25;
 var confirm2;
+
+var inputData = document.getElementById('inClicks').Value;
+var form1= document.getElementById('form1');
+form1.addEventListener('submit', handleSubmit)
+function handleSubmit(event){
+    event.preventDefault();
+    maxAllowedClicks= event.target.inClicks.value;
+}
 
 if (localStorage.length > 0) {
     totalClicks = parseInt(localStorage.getItem("savedTotalClicks"));
